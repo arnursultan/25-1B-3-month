@@ -10,7 +10,6 @@ router = Router()
 async def is_admin(message: types.Message) -> bool:
     return message.from_user.id == ADMIN_ID
 
-# Добавление вопроса
 @router.message(F.text.startswith("/add_question"))
 async def add_new_question(message: types.Message):
     if not await is_admin(message):
